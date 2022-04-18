@@ -6,6 +6,7 @@ const temp_status = document.getElementById('temp_status');
 const middle_layer = document.querySelector('.middle_layer');
 const day = document.getElementById('day');
 const time = document.getElementById('time');
+const today_data = document.getElementById('today_data');
 
 
 
@@ -52,49 +53,6 @@ var today = new Date();
   day.innerText = daylist[newday]
   console.log("Today is : " + daylist[newday] + ".");
 
-
-  function myshowTime(){
-
-    var hour = today.getHours();
-    var minute = today.getMinutes();
-    var second = today.getSeconds();
-    var prepand = (hour >= 12)? " PM ":" AM ";
-    hour = (hour >= 12)? hour - 12: hour;
-    if (hour===0 && prepand===' PM ') 
-    { 
-    if (minute===0 && second===0)
-    { 
-    hour=12;
-    prepand=' Noon';
-    } 
-    else
-    { 
-    hour=12;
-    prepand=' PM';
-    } 
-    } 
-    if (hour===0 && prepand===' AM ') 
-    { 
-    if (minute===0 && second===0)
-    { 
-    hour=12;
-    prepand=' Midnight';
-    } 
-    else
-    { 
-    hour=12;
-    prepand=' AM';
-    } 
-    } 
-  
-    time.innerText = hour + ":"+ minute + ":"+ second + " " + prepand;
-
-
-    console.log("Current Time : "+hour + prepand + " : " + minute + " : " + second);
- 
-   // setTimeout(function() {myshowTime()}, 1000);
-};
-
   
 
 
@@ -105,3 +63,16 @@ var today = new Date();
     document.getElementById("time").innerHTML = date.toLocaleTimeString();
     setTimeout(function() {startTime()}, 1000);
   }
+
+  // show month and date
+
+
+  
+     const date = today.toLocaleString('default', { day: 'numeric'});
+
+     const month = today.toLocaleString('default', { month: 'short'});
+   console.log(month);
+
+   today_data.innerText =date + " " + month;
+
+

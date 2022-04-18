@@ -8,7 +8,7 @@
     font-family: 'Piazzolla','serif';
 }
 img{
-    width: 100%;
+    width: 500px !important;
     height: inherit;
 }
 :root{
@@ -73,6 +73,7 @@ body{
 
 .main_header_left, .main_header_right {
     height:70rem;
+    padding: 10rem;
     display: flex;
     float: left;
     flex-direction: column;
