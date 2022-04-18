@@ -7,7 +7,7 @@
     box-sizing: border-box;
     font-family: 'Piazzolla','serif';
 }
-img{
+.carousel-item img{
     width: 500px !important;
     height: inherit;
 }
